@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/tgbv/go-linkedlist/pkg"
+	"github.com/tgbv/go-linkedlist/pkg/listTypesDoubly"
 	"github.com/tgbv/go-linkedlist/pkg/listTypesSingly"
 )
 
@@ -30,6 +31,12 @@ func main() {
 	float := pkg.MakeSinglyListFloat64Length32()
 	float.Add(33.0).Add(22.0).Add(12).DeleteAtIndex(2).Traverse(func(n *listTypesSingly.NodeFloat64) {
 		fmt.Println(n.Value)
+	})
+
+	// doubly list of length 32 containing int32 values
+	dInt32 := pkg.MakeDoublyListInt32Length32()
+	dInt32.Add(22).Add(11).Add(55).DeleteAtIndex(1).Traverse(func(n *listTypesDoubly.NodeInt32) {
+		fmt.Println(n)
 	})
 
 }
