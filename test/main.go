@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/tgbv/go-linkedlist/internal/listTypesSingly"
 	"github.com/tgbv/go-linkedlist/pkg"
+	"github.com/tgbv/go-linkedlist/pkg/listTypesSingly"
 )
 
 func main() {

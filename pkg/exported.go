@@ -1,6 +1,6 @@
 package pkg
 
-import "github.com/tgbv/go-linkedlist/internal/listTypesSingly"
+import "github.com/tgbv/go-linkedlist/pkg/listTypesSingly"
 
 /*
 *	this one acts as bootstrap for all required modules from within ../internal
