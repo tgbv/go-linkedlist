@@ -9,11 +9,11 @@ import (
 *	the list type
 	formula: data withheld + max Length of nodes
 */
-type StringLength32Node = nodeTypesSingly.NodeString
+type StringNode = nodeTypesSingly.NodeString
 type StringLength32 struct {
 	listLengths.List32Length
-	head *StringLength32Node
-	tail *StringLength32Node
+	head *StringNode
+	tail *StringNode
 }
 
 /*
@@ -24,13 +24,13 @@ func (l *StringLength32) Add(v string) *StringLength32 {
 	// check list Length
 	// if < 1 then add to start
 	if l.Length < 1 {
-		l.head = &StringLength32Node{Value: v}
+		l.head = &StringNode{Value: v}
 		l.tail = l.head
 	} else
 
 	// if > 1 append to tail Next
 	{
-		l.tail.Next = &StringLength32Node{Value: v}
+		l.tail.Next = &StringNode{Value: v}
 		l.tail = l.tail.Next
 	}
 
@@ -43,7 +43,7 @@ func (l *StringLength32) Add(v string) *StringLength32 {
 *	traverse the list with a callback
 	O(n)
 */
-func (l *StringLength32) Traverse(f func(*StringLength32Node)) *StringLength32 {
+func (l *StringLength32) Traverse(f func(*StringNode)) *StringLength32 {
 	node := l.head
 
 	for node != nil {
@@ -60,7 +60,7 @@ func (l *StringLength32) Traverse(f func(*StringLength32Node)) *StringLength32 {
 
 	O(n)
 */
-func (l *StringLength32) Get(i uint32) *StringLength32Node {
+func (l *StringLength32) Get(i uint32) *StringNode {
 	// check for index overflow
 	if i < 0 || i > l.Length-1 {
 		panic("Index overflow !")
@@ -117,9 +117,9 @@ func (l *StringLength32) DeleteAtIndex(i uint32) *StringLength32 {
 	// otherwise iterate and delete appropriate node
 	{
 		var (
-			prev *StringLength32Node
-			curr *StringLength32Node = l.head
-			j    uint32              = 1
+			prev *StringNode
+			curr *StringNode = l.head
+			j    uint32      = 1
 		)
 
 		for j <= i {

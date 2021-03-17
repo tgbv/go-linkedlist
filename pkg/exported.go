@@ -17,3 +17,7 @@ func MakeSinglyListInt32Length32() listTypesSingly.Int32Length32 {
 func MakeSinglyListStringLength32() listTypesSingly.StringLength32 {
 	return listTypesSingly.StringLength32{}
 }
+
+func MakeSinglyListFloat64Length32() listTypesSingly.Float64Length32 {
+	return listTypesSingly.Float64Length32{}
+}

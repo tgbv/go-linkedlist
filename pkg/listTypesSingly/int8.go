@@ -9,7 +9,7 @@ import (
 *	the list type
 	formula: data withheld + max Length of nodes
 */
-type Int8Length32Node = nodeTypesSingly.NodeInt8
+type Int8Node = nodeTypesSingly.NodeInt8
 type Int8Length32 struct {
 	listLengths.List32Length
 	head *nodeTypesSingly.NodeInt8
@@ -17,7 +17,7 @@ type Int8Length32 struct {
 }
 
 /*
-*	add int64 value to singly int64 list
+*	add int8 value to singly int8 list
 	O(1)
 */
 func (l *Int8Length32) Add(v int8) *Int8Length32 {
